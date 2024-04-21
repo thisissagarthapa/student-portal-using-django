@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Information Table</title>
+    <style>
+       
+        table {
+            border-collapse: collapse;
+            width: 100%; 
+            margin-top: 20px;
+            font-family: Arial, sans-serif; 
+        }
+
+        th {
+            background-color: #4CAF50; 
+            color: white; 
+            padding: 10px; 
+            text-align: left; 
+        }
+
+        td {
+            padding: 10px; 
+            border: 1px solid #ddd; 
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #ddd; 
+        }
+
+        .center {
+            text-align: center; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Information Table</h2>
+
+    <table>
+        <tr>
+            <th>Name</th> 
+            <th class="center">Age</th> 
+            <th class="center">Roll No.</th> 
+            <th>Email</th>
+        </tr>
+
+        {% for student in data %}
+        <tr>
+            <td>{{ student.name }}</td> 
+            <td class="center">{{ student.age }}</td> 
+            <td class="center">{{ student.rollno }}</td> 
+            <td>{{ student.email }}</td>
+        </tr>
+        {% endfor %} 
+    </table> 
+
+</body>
+</html>
